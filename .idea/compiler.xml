@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="garine-learn-common" />
+        <module name="garine-learn-mq" />
+        <module name="garine-learn-mq-starter" />
+        <module name="garine-learn-redis" />
+        <module name="gupao-learn" />
+        <module name="learn-common" />
+        <module name="learn-redis" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="garine-learn-common" target="1.8" />
+      <module name="garine-learn-mq" target="1.8" />
+      <module name="garine-learn-mq-starter" target="1.8" />
+      <module name="garine-learn-redis" target="1.8" />
+      <module name="gupao-learn" target="1.8" />
+      <module name="zhoujylearn" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

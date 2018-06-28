@@ -1,0 +1,6 @@
+CREATE TABLE user
+(
+    tid INT PRIMARY KEY NOT NULL,
+    user_name VARCHAR(20) DEFAULT '' NOT NULL,
+    sex VARCHAR(1) DEFAULT '' NOT NULL
+);
