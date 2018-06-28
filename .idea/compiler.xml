@@ -10,7 +10,6 @@
         <module name="garine-learn-mq" />
         <module name="garine-learn-mq-starter" />
         <module name="garine-learn-redis" />
-        <module name="gupao-learn" />
         <module name="learn-common" />
         <module name="learn-redis" />
       </profile>

@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/garine-learn-mq/garine-learn-mq.iml" filepath="$PROJECT_DIR$/garine-learn-mq/garine-learn-mq.iml" />
       <module fileurl="file://$PROJECT_DIR$/garine-learn-mq-starter/garine-learn-mq-starter.iml" filepath="$PROJECT_DIR$/garine-learn-mq-starter/garine-learn-mq-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/garine-learn-redis/garine-learn-redis.iml" filepath="$PROJECT_DIR$/garine-learn-redis/garine-learn-redis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gupao-learn/gupao-learn.iml" filepath="$PROJECT_DIR$/gupao-learn/gupao-learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/zhoujylearn.iml" filepath="$PROJECT_DIR$/zhoujylearn.iml" />
     </modules>
   </component>
