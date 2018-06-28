@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/garine-learn-common/garine-learn-common.iml" filepath="$PROJECT_DIR$/garine-learn-common/garine-learn-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/garine-learn-gupao/garine-learn-gupao.iml" filepath="$PROJECT_DIR$/garine-learn-gupao/garine-learn-gupao.iml" />
       <module fileurl="file://$PROJECT_DIR$/garine-learn-mq/garine-learn-mq.iml" filepath="$PROJECT_DIR$/garine-learn-mq/garine-learn-mq.iml" />
       <module fileurl="file://$PROJECT_DIR$/garine-learn-mq-starter/garine-learn-mq-starter.iml" filepath="$PROJECT_DIR$/garine-learn-mq-starter/garine-learn-mq-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/garine-learn-redis/garine-learn-redis.iml" filepath="$PROJECT_DIR$/garine-learn-redis/garine-learn-redis.iml" />

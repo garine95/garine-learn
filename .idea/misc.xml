@@ -3,11 +3,11 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/learn-redis/pom.xml" />
         <option value="$PROJECT_DIR$/zhoujy-learn-common-core/pom.xml" />
         <option value="$PROJECT_DIR$/learn-common/pom.xml" />
         <option value="$PROJECT_DIR$/gupao-learn/pom.xml" />
+        <option value="$PROJECT_DIR$/garine-learn-gupao/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

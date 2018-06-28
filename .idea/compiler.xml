@@ -10,16 +10,19 @@
         <module name="garine-learn-mq" />
         <module name="garine-learn-mq-starter" />
         <module name="garine-learn-redis" />
+        <module name="gupao-learn (1)" />
         <module name="learn-common" />
         <module name="learn-redis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="garine-learn-common" target="1.8" />
+      <module name="garine-learn-gupao" target="1.5" />
       <module name="garine-learn-mq" target="1.8" />
       <module name="garine-learn-mq-starter" target="1.8" />
       <module name="garine-learn-redis" target="1.8" />
       <module name="gupao-learn" target="1.8" />
+      <module name="gupao-learn (1)" target="1.8" />
       <module name="zhoujylearn" target="1.6" />
     </bytecodeTargetLevel>
   </component>
