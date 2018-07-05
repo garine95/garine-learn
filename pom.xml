@@ -13,6 +13,7 @@
         <module>garine-learn-common</module>
         <module>garine-learn-mq-starter</module>
         <module>garine-learn-mq</module>
+        <module>garine-learn-myrpc</module>
     </modules>
 
     <parent>
