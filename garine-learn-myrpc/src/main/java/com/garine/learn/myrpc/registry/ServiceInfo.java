@@ -15,6 +15,8 @@ public class ServiceInfo {
 
     private String port;
 
+    private Object[] args;
+
     public String getFullHost(){
         return hostName+":"+port;
     }
