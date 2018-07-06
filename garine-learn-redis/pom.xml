@@ -115,10 +115,11 @@
         </dependency>
 
         <!-- learn dependend -->
-        <dependency>
-            <groupId>com.garine</groupId>
-            <artifactId>garine-learn-common</artifactId>
-        </dependency>
+		<dependency>
+			<groupId>com.garine</groupId>
+			<artifactId>garine-learn-common</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

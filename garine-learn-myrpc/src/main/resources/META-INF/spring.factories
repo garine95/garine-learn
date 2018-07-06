@@ -1,0 +1,4 @@
+#不使用spring启动扫描，使用自动配置扫描来达到提前自动配置
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.garine.learn.myrpc.registry.zookeeper.ZkAutoConfiguration

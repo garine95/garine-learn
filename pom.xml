@@ -14,6 +14,7 @@
         <module>garine-learn-mq-starter</module>
         <module>garine-learn-mq</module>
         <module>garine-learn-myrpc</module>
+        <module>garine-learn-myrpc-server-test</module>
     </modules>
 
     <parent>

@@ -13,7 +13,6 @@ import java.util.List;
 /**
  * 利用zookeeper实现的发现中心
  */
-@Component
 public class ZkDiscoverCenter implements DiscoverCenter {
 
     @Resource
