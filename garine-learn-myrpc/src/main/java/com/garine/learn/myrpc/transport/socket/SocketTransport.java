@@ -32,7 +32,7 @@ public class SocketTransport implements Transport{
             out.close();
             objIn.close();
             in.close();
-
+            socket.close();
             return result;
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -51,8 +51,8 @@ public class SocketTransport implements Transport{
             in = socket.getInputStream();
             ObjectInputStream objIn = new ObjectInputStream(in);
             Request request = (Request) objIn.readObject();
-            objIn.close();
-            in.close();
+//            objIn.close();
+//            in.close();
             return request;
         } catch (IOException e) {
             e.printStackTrace();

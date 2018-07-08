@@ -1,6 +1,8 @@
 package com.garine.learn.myrpc.client;
 
 import com.garine.learn.myrpc.registry.ServiceInfo;
+import lombok.Data;
+import org.springframework.beans.factory.FactoryBean;
 
 import java.lang.reflect.Proxy;
 
@@ -8,9 +10,25 @@ import java.lang.reflect.Proxy;
  * @author zhoujy
  * @date 2018年07月06日
  **/
-public class RpcClientProxyFactory {
+@Data
+public class RpcClientProxyFactory<T> implements FactoryBean<T>{
 
-    <T> T createProxy(Class<T> tClass, ServiceInfo serviceInfo){
-        return (T) Proxy.newProxyInstance(tClass.getClassLoader(), new Class[]{tClass},new MyRpcInvocationHandler(serviceInfo));
+    private Class<T> interfaceClass;
+
+    private ServiceInfo serviceInfo;
+
+    @Override
+    public T getObject() throws Exception {
+        return (T) Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class[]{interfaceClass},new MyRpcInvocationHandler(serviceInfo));
+    }
+
+    @Override
+    public Class<?> getObjectType() {
+        return interfaceClass;
+    }
+
+    @Override
+    public boolean isSingleton() {
+        return true;
     }
 }

@@ -2,6 +2,7 @@ package com.garine.learn.myrpc.client;
 
 import com.garine.learn.myrpc.Request;
 import com.garine.learn.myrpc.registry.ServiceInfo;
+import com.garine.learn.myrpc.transport.Transport;
 import com.garine.learn.myrpc.transport.socket.SocketTransport;
 
 import java.lang.reflect.InvocationHandler;
@@ -28,7 +29,7 @@ public class MyRpcInvocationHandler implements InvocationHandler{
         request.setHostName(serviceInfo.getHostName());
         request.setPort(Integer.parseInt(serviceInfo.getPort()));
 
-        SocketTransport socketTransport = new SocketTransport();
+        Transport socketTransport = new SocketTransport();
         Object result = socketTransport.sendMessage(request);
         return result;
     }

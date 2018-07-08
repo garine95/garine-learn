@@ -9,7 +9,7 @@ import lombok.Data;
 public class ServiceInfo {
     private String serviceName;
 
-    private String serviceVersion;
+    private String serviceVersion = "";
 
     private String hostName;
 
@@ -33,4 +33,9 @@ public class ServiceInfo {
 
     }
 
+    public static ServiceInfo build(Class<?> cls) {
+        ServiceInfo info =new ServiceInfo();
+        info.setServiceName(cls.getName());
+        return info;
+    }
 }

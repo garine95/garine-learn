@@ -15,6 +15,9 @@
         <module>garine-learn-mq</module>
         <module>garine-learn-myrpc</module>
         <module>garine-learn-myrpc-server-test</module>
+        <module>garine-learn-myrpc-sdemo</module>
+        <module>garine-learn-myrpc-cdemo</module>
+        <module>garine-learn-myrpc-api</module>
     </modules>
 
     <parent>
