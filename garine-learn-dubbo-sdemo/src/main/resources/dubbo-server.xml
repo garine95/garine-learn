@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="dubbo-server" owner="garine"/>
+
+    <dubbo:registry id="zk1" address="zookeeper://192.168.0.15:2181"/>
+
+    <!--<dubbo:registry id="zk1" address="N/A"/>-->
+
+    <!-- 支持配置多协议服务 -->
+    <dubbo:protocol port="20880" name="dubbo"/>
+
+    <dubbo:protocol port="8081" name="hessian"/>
+
+    <dubbo:service interface= "com.garine.dubbo.api.HelloService" registry="zk1" protocol="dubbo" ref="helloService"/>
+
+    <bean id="helloService" class="com.garine.learn.dubbo.impl.HelloServiceImpl"/>
+
+    <dubbo:service interface= "com.garine.dubbo.api.HessianService" registry="zk1" protocol="hessian,dubbo" ref="hessianService"/>
+
+    <bean id="hessianService" class="com.garine.learn.dubbo.impl.HessianServiceImpl"/>
+</beans>

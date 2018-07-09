@@ -14,10 +14,12 @@
         <module>garine-learn-mq-starter</module>
         <module>garine-learn-mq</module>
         <module>garine-learn-myrpc</module>
-        <module>garine-learn-myrpc-server-test</module>
         <module>garine-learn-myrpc-sdemo</module>
         <module>garine-learn-myrpc-cdemo</module>
         <module>garine-learn-myrpc-api</module>
+        <module>garine-learn-dubbo-sdemo</module>
+        <module>garine-learn-dubbo-cdemo</module>
+        <module>garine-learn-dubbo-api</module>
     </modules>
 
     <parent>
@@ -38,13 +40,13 @@
     </dependencyManagement>
 
     <build>
-        <plugins>
-            <!-- 引入 spring boot maven 插件： 1、打包项目为可执行的jar包(mvn package) 2、启动项目 (mvn spring-boot:run) / java -jar xxxx.jar -->
+   <!--     <plugins>
+            &lt;!&ndash; 引入 spring boot maven 插件： 1、打包项目为可执行的jar包(mvn package) 2、启动项目 (mvn spring-boot:run) / java -jar xxxx.jar &ndash;&gt;
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <dependencies>
-                    <!-- Spring-Loaded项目提供了强大的热部署功能，添加/删除/修改 方法/字段/接口/枚举 等代码的时候都可以热部署 -->
+                    &lt;!&ndash; Spring-Loaded项目提供了强大的热部署功能，添加/删除/修改 方法/字段/接口/枚举 等代码的时候都可以热部署 &ndash;&gt;
                     <dependency>
                         <groupId>org.springframework</groupId>
                         <artifactId>springloaded</artifactId>
@@ -67,7 +69,7 @@
                 </configuration>
             </plugin>
 
-            <!-- 打包时，同时构建源码包 -->
+            &lt;!&ndash; 打包时，同时构建源码包 &ndash;&gt;
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
                 <executions>
@@ -80,6 +82,6 @@
                     </execution>
                 </executions>
             </plugin>
-        </plugins>
+        </plugins>-->
     </build>
 </project>

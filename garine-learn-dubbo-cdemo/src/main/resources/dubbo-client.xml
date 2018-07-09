@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!--提供方信息-->
+    <dubbo:application name="dubbo-client" owner="garine"/>
+
+    <!--注册中心-->
+    <!-- check=false 表示启动不检查是否有可用服务 -->
+    <!--file="d:/dubbo-server-cache" 表示服务列表缓存文件位置所在-->
+    <!--    注册中心不配置也行，直接指定接口服务地址所在
+        <dubbo:registry address="N/A"/>-->
+
+    <!--注册中心集群，用逗号分隔-->
+    <dubbo:registry address="zookeeper://192.168.0.15:2181?register=false" check="false" file="d:/dubbo-server-cache"/>
+
+
+<!--    <dubbo:reference id="helloService"
+                     interface="com.garine.dubbo.api.HelloService"
+                     protocol="dubbo" url="dubbo://192.168.0.109:20880/com.garine.dubbo.api.HelloService"/>-->
+    <dubbo:reference id="helloService"
+                     interface="com.garine.dubbo.api.HelloService"
+                     protocol="dubbo" mock="com.garine.mock.TestMock" timeout="2" cluster="failsafe"/>
+
+    <!-- 客户端容错配置，当失败时的处理策略共有六种
+    默认failover 自动重试其他服务2次
+    failsafe 吞掉异常
+    failfast 快速失败，调用失败就跑出异常
+    failback 失败后自动恢复，记录失败调用，然后定时重试
+    forking 并行调用服务，以成功调用的服务为准，forks设置并行数目
+    broadcast 广播，任意一个报错则报错
+
+    生产常用failfast failover
+    -->
+
+
+    <dubbo:reference id="HessianService"
+                     interface="com.garine.dubbo.api.HessianService"
+                     protocol="hessian" cluster="failover"/>
+
+
+    <!-- 一般客户端配置优先于服务端
+    1.一般是方法级别优先，然后是接口最后是全局配置
+    2.级别一样，那么就客户端配置优先
+    3.timeout 一般两边都可以配，但是谁来主控一般都是服务端
+    retries 重试是客户端关注的配置
+    loadblance 负载是客户端配置
+    cluster是客户端的配置
+    -->
+
+    <!--服务降级
+       1.通过服务降级保证核心服务可用，利用排队，分流
+       2.dubbo中配置mock处理调用失败后的降级处理
+       3.注意cluster配置可能会冲突，cluster吞掉异常的话将不会走mock，例如failsafe
+    -->
+
+</beans>
