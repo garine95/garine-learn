@@ -100,8 +100,8 @@ public class BeanRegistryUtil implements ApplicationContextAware,BeanDefinitionR
     }
 
     @Override
-    public void setApplicationContext(ApplicationContext ctx) throws BeansException {
-        this.ctx = ctx;
+    public void setApplicationContext(ApplicationContext ctxx) throws BeansException {
+        ctx = ctxx;
     }
 
     /**
