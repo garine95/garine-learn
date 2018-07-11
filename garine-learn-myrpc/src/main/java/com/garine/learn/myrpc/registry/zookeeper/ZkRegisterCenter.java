@@ -8,6 +8,10 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.data.Stat;
 
+/**
+ * zk实现的服务注册中心
+ * @author zhoujy
+ */
 @Slf4j
 @Data
 public class ZkRegisterCenter implements RegistryCenter{

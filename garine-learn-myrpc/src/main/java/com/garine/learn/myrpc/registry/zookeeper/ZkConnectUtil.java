@@ -7,6 +7,10 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 
+/**
+ * 创建一个zk连接，单例处理
+ * @author zhoujy
+ */
 @Slf4j
 public class ZkConnectUtil {
 

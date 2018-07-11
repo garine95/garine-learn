@@ -7,6 +7,7 @@ import org.springframework.beans.factory.FactoryBean;
 import java.lang.reflect.Proxy;
 
 /**
+ * 动态代理类FactoryBean，用于工厂方式实例化代理类bean
  * @author zhoujy
  * @date 2018年07月06日
  **/

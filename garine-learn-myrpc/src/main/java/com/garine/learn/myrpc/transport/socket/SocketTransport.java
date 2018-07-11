@@ -7,6 +7,7 @@ import java.io.*;
 import java.net.Socket;
 
 /**
+ * socket实现通道
  * @author zhoujy
  * @date 2018年07月06日
  **/

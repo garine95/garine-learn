@@ -10,7 +10,7 @@ import org.springframework.util.CollectionUtils;
 import java.util.List;
 
 /**
- * 利用zookeeper实现的发现中心
+ * 利用zookeeper实现的服务发现中心
  */
 @Slf4j
 @Data

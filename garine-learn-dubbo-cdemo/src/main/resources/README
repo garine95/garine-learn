@@ -1,0 +1,8 @@
+dubbo启动bug
+1.maven编译依赖子模块问题：
+	api模块       1.<repackage.skip>true</repackage.skip>  2.不需要引入build插件，否则依赖这个模块的项目会找不到
+
+2.dubbo启动问题
+         下载的包破损导致
+3.dubboxml标签识别问题
+         下载的包破损导致

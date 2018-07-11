@@ -22,6 +22,10 @@ import org.springframework.util.CollectionUtils;
 import java.util.Iterator;
 import java.util.Set;
 
+/**
+ * com.example.gupaolearn.rpc.BeanUtil中有优化实现
+ * @author zhoujy
+ */
 @Component
 public class BeanRegistryUtil implements ApplicationContextAware,BeanDefinitionRegistryPostProcessor {
     private static ApplicationContext ctx;

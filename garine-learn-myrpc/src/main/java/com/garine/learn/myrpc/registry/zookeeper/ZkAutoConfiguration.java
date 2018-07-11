@@ -10,6 +10,9 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 自动配置类，参考spring boot自动配置的实现
+ */
 //@Bean注解方法的会执行创建bean
 @Configuration
 //当以下类在路径上才执行创建bean，当前rpc已经引入

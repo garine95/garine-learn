@@ -10,6 +10,8 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * spring 手动创建、获取bean工具
  * @author zhoujy
@@ -27,14 +29,16 @@ public class BeanUtil implements ApplicationContextAware,BeanDefinitionRegistryP
      */
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry beanDefinitionRegistry) throws BeansException {
-        Class<?> beanClazz = null;//反射获取接口clazz
-        BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(beanClazz);
-        GenericBeanDefinition definition = (GenericBeanDefinition) builder.getRawBeanDefinition();
-        definition.getPropertyValues().add("interfaceClass", beanClazz);
-        definition.getPropertyValues().add("params", "注册传入参数，一般是properties配置的信息");
-        definition.setBeanClass(InterfaceFactoryBean.class);
-        definition.setAutowireMode(GenericBeanDefinition.AUTOWIRE_BY_TYPE);
-        beanDefinitionRegistry.registerBeanDefinition(beanClazz.getSimpleName(), definition);
+        List<Class<?>> beanClazzs = null;//反射获取需要代理的接口的clazz列表
+        for (Class beanClazz : beanClazzs) {
+            BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(beanClazz);
+            GenericBeanDefinition definition = (GenericBeanDefinition) builder.getRawBeanDefinition();
+            definition.getPropertyValues().add("interfaceClass", beanClazz);
+            definition.getPropertyValues().add("params", "注册传入工厂的参数，一般是properties配置的信息");
+            definition.setBeanClass(InterfaceFactoryBean.class);
+            definition.setAutowireMode(GenericBeanDefinition.AUTOWIRE_BY_TYPE);
+            beanDefinitionRegistry.registerBeanDefinition(beanClazz.getSimpleName(), definition);
+        }
     }
 
     /**

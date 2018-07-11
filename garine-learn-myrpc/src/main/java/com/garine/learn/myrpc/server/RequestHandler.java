@@ -12,6 +12,10 @@ import java.io.OutputStream;
 import java.lang.reflect.Method;
 import java.net.Socket;
 
+/**
+ * 服务端处理请求类，选择出对应服务接口进行调用
+ * @author zhoujy
+ */
 @Slf4j
 public class RequestHandler implements Runnable{
     private Socket socket;
