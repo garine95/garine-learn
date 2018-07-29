@@ -20,6 +20,7 @@
         <module>garine-learn-dubbo-sdemo</module>
         <module>garine-learn-dubbo-cdemo</module>
         <module>garine-learn-dubbo-api</module>
+        <module>garine-learn-activemq-sdemo</module>
     </modules>
 
     <parent>

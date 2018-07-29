@@ -6,9 +6,9 @@
 
     <dubbo:application name="dubbo-server" owner="garine"/>
 
-    <!--<dubbo:registry id="zk1" address="zookeeper://192.168.0.15:2181"/>-->
+    <dubbo:registry id="zk1" address="zookeeper://192.168.0.15:2181"/>
 
-    <dubbo:registry id="zk1" address="N/A"/>
+    <!--<dubbo:registry id="zk1" address="N/A"/>-->
 
     <!-- 支持配置多协议服务 -->
     <dubbo:protocol port="20880" name="dubbo"/>
