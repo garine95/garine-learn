@@ -4,7 +4,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
 
-public class JMSCommonProducer {
+public class JMSPersistentMsgProducer {
     public static void main(String[] args) throws JMSException {
         //根据broker URL建立连接工厂
         ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.0.15:61616");
@@ -17,8 +17,9 @@ public class JMSCommonProducer {
         Destination destination = session.createQueue("garine-queue");
         //创建生产者
         MessageProducer producer = session.createProducer(destination);
-        //创建文本消息，有多种消息类型
+        //创建持久化文本消息
         TextMessage textMessage = session.createTextMessage("Hello garine");
+        textMessage.setJMSDeliveryMode(DeliveryMode.PERSISTENT);
         //发送消息
         producer.send(textMessage);
         System.out.println("over");

@@ -4,7 +4,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
 
-public class JMSCommonProducer {
+public class JMSCommonSessionProducer {
     public static void main(String[] args) throws JMSException {
         //根据broker URL建立连接工厂
         ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.0.15:61616");
@@ -12,7 +12,7 @@ public class JMSCommonProducer {
         Connection connection = connectionFactory.createConnection();
         connection.start();
         //创建会话
-        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+        Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
         //创建队列（有则不创建）
         Destination destination = session.createQueue("garine-queue");
         //创建生产者
@@ -21,6 +21,7 @@ public class JMSCommonProducer {
         TextMessage textMessage = session.createTextMessage("Hello garine");
         //发送消息
         producer.send(textMessage);
+        session.commit();
         System.out.println("over");
         session.close();
     }
