@@ -1,4 +1,4 @@
-package com.garine.producer;
+package com.garine.consumer;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
@@ -8,7 +8,7 @@ import org.apache.activemq.command.ActiveMQDestination;
 
 import javax.jms.*;
 
-public class JMSCommonProducer {
+public class JMSClientAckConsumer {
     public static void main(String[] args) throws JMSException {
         //根据broker URL建立连接工厂
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.0.15:61616");
@@ -16,12 +16,11 @@ public class JMSCommonProducer {
         ActiveMQConnection connection = (ActiveMQConnection) connectionFactory.createConnection();
         connection.start();
         //创建会话
-        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-
+        Session session = connection.createSession(true, Session.CLIENT_ACKNOWLEDGE);
         //重发策略
         RedeliveryPolicy queuePolicy = new RedeliveryPolicy();
         queuePolicy.setInitialRedeliveryDelay(0);
-        queuePolicy.setRedeliveryDelay(1000);
+        queuePolicy.setRedeliveryDelay(20000);
         queuePolicy.setUseExponentialBackOff(false);
         queuePolicy.setMaximumRedeliveries(2);
 
@@ -31,13 +30,20 @@ public class JMSCommonProducer {
         RedeliveryPolicyMap map = connection.getRedeliveryPolicyMap();
         map.put((ActiveMQDestination) destination, queuePolicy);
 
-        //创建生产者
-        MessageProducer producer = session.createProducer(destination);
-        //创建文本消息，有多种消息类型
-        TextMessage textMessage = session.createTextMessage("Hello garine");
-        //发送消息
-        producer.send(textMessage);
-        System.out.println("over");
-        session.close();
+
+        session.createConsumer(destination).setMessageListener(new MessageListener() {
+            @Override
+            public void onMessage(Message message) {
+                TextMessage textMessage = (TextMessage) message;
+                try {
+                    System.out.println(textMessage.getText());
+                    session.rollback();
+                    //session.close();
+                } catch (JMSException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
     }
 }
