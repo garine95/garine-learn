@@ -22,6 +22,8 @@
         <module>garine-learn-dubbo-api</module>
         <module>garine-learn-activemq-sdemo</module>
         <module>garine-learn-file-save</module>
+        <module>garine-learn-kafka-sdemo</module>
+        <module>garine-learn-kafka-consumer</module>
     </modules>
 
     <parent>
