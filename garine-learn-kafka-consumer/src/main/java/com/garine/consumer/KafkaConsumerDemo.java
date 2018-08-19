@@ -57,5 +57,6 @@ public class KafkaConsumerDemo implements Runnable{
 
     public static void main(String[] args) {
         new Thread(new KafkaConsumerDemo("test")).start();
+        //System.out.println("KafkaConsumerDemo".hashCode() % 50);
     }
 }

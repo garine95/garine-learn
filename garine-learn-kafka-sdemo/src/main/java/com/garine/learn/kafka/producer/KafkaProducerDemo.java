@@ -78,9 +78,10 @@ public class KafkaProducerDemo extends Thread{
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         KafkaProducerDemo kafkaProducerDemo = new KafkaProducerDemo("test", true);
         kafkaProducerDemo.start();
+        Thread.sleep(10000);
     }
 }
 

@@ -44,7 +44,7 @@ public class KafkaDefinePartitionStrategyDemo extends Thread{
     }
     @Override
     public void run() {
-        int count = 50;
+        int count = 500;
         if (isAsync){
             do {
                 int finalCount = count;
@@ -59,7 +59,7 @@ public class KafkaDefinePartitionStrategyDemo extends Thread{
                     }
                 });
                 count--;
-            }while (count >0);
+            }while (true);
         }else {
             //同步发送消息,get是阻塞进行的
             do {
