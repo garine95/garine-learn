@@ -24,6 +24,8 @@
         <module>garine-learn-file-save</module>
         <module>garine-learn-kafka-sdemo</module>
         <module>garine-learn-kafka-consumer</module>
+        <module>garien-learn-xiaomage</module>
+        <module>garine-practice-spring</module>
     </modules>
 
     <parent>
