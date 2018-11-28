@@ -1,5 +1,6 @@
 package com.garine.debug.testcase;
 
+import com.garine.debug.testcase.model.AopObject;
 import com.garine.debug.testcase.model.GaComponent;
 import com.garine.debug.testcase.model.GaObject;
 import org.springframework.boot.SpringApplication;
@@ -14,8 +15,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class FactoryBeanTest {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(FactoryBeanTest.class, args);
-        System.out.println(context.getBean(GaObject.class));
-        System.out.println(context.getBean("&gaFactoryBean"));
-        System.out.println(context.getBean(GaComponent.class));
+//        System.out.println(context.getBean(GaObject.class));
+//        System.out.println(context.getBean("&gaFactoryBean"));
+//        System.out.println(context.getBean(GaComponent.class));
+          context.getBean(AopObject.class).aoped();
     }
 }
