@@ -27,4 +27,13 @@ public class TestServiceImpl implements TestService {
         }
         testMapper.insert(new Test(210,20,30));
     }
+
+    @Override
+    public void insertTestNoTr() {
+        int re = testMapper.insert(new Test(10,20,30));
+        if (re > 0) {
+            throw new NeedToInterceptException("need intercept");
+        }
+        testMapper.insert(new Test(210,20,30));
+    }
 }

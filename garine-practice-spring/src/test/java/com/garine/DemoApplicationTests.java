@@ -24,4 +24,9 @@ public class DemoApplicationTests {
 		testService.insertTest();
 	}
 
+	@Test
+	public void  testInsertNoTr(){
+		testService.insertTestNoTr();
+	}
+
 }

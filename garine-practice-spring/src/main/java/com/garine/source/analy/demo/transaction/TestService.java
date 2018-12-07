@@ -9,4 +9,7 @@ import com.garine.source.analy.demo.transaction.entity.Test;
 public interface TestService {
 
     void insertTest();
+
+
+    void insertTestNoTr();
 }
